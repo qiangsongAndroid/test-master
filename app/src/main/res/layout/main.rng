@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns:cube_ptr="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="LinearLayout"/>
+    </start>
+    <define name="LinearLayout">
+        <element name="LinearLayout">
+            <optional>
+                <attribute name="android:gravity">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="android:id"/>
+            </optional>
+            <attribute name="android:layout_height">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <attribute name="android:layout_marginEnd">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="android:layout_weight">
+                    <data type="decimal"/>
+                </attribute>
+            </optional>
+            <attribute name="android:layout_width">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="android:orientation">
+                <data type="NCName"/>
+            </attribute>
+            <optional>
+                <attribute name="android:visibility">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <element name="in.srain.cube.views.ptr.PtrFrameLayout">
+                    <attribute name="cube_ptr:ptr_duration_to_close">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="cube_ptr:ptr_duration_to_close_header">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="cube_ptr:ptr_keep_header_when_refresh">
+                        <data type="boolean"/>
+                    </attribute>
+                    <attribute name="cube_ptr:ptr_pull_to_fresh">
+                        <data type="boolean"/>
+                    </attribute>
+                    <attribute name="cube_ptr:ptr_ratio_of_header_height_to_refresh">
+                        <data type="decimal"/>
+                    </attribute>
+                    <attribute name="cube_ptr:ptr_resistance">
+                        <data type="decimal"/>
+                    </attribute>
+                    <attribute name="android:background"/>
+                    <attribute name="android:id"/>
+                    <attribute name="android:layout_height">
+                        <data type="NCName"/>
+                    </attribute>
+                    <attribute name="android:layout_width">
+                        <data type="NCName"/>
+                    </attribute>
+                    <element name="FrameLayout">
+                        <attribute name="android:background"/>
+                        <attribute name="android:layout_height">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="android:layout_width">
+                            <data type="NCName"/>
+                        </attribute>
+                        <ref name="LinearLayout"/>
+                        <element name="include">
+                            <attribute name="layout"/>
+                            <attribute name="android:id"/>
+                            <attribute name="android:layout_height">
+                                <data type="NCName"/>
+                            </attribute>
+                            <attribute name="android:layout_width">
+                                <data type="NCName"/>
+                            </attribute>
+                            <attribute name="android:visibility">
+                                <data type="NCName"/>
+                            </attribute>
+                        </element>
+                    </element>
+                </element>
+                <element name="ExpandableListView">
+                    <attribute name="android:id"/>
+                    <attribute name="android:layout_height">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <attribute name="android:layout_weight">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="android:layout_width">
+                        <data type="NCName"/>
+                    </attribute>
+                </element>
+                <element name="View">
+                    <attribute name="android:background"/>
+                    <attribute name="android:layout_height">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <attribute name="android:layout_width">
+                        <data type="NCName"/>
+                    </attribute>
+                </element>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="LinearLayout"/>
+                    <element name="CheckBox">
+                        <attribute name="android:background"/>
+                        <attribute name="android:button"/>
+                        <attribute name="android:clickable">
+                            <data type="boolean"/>
+                        </attribute>
+                        <attribute name="android:drawableLeft"/>
+                        <attribute name="android:drawablePadding">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="android:id"/>
+                        <attribute name="android:layout_gravity">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="android:layout_height">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="android:layout_marginStart">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="android:layout_weight">
+                            <data type="decimal"/>
+                        </attribute>
+                        <attribute name="android:layout_width">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="android:minHeight">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="android:text"/>
+                        <attribute name="android:textSize">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </element>
+                </choice>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="TextView">
+                    <optional>
+                        <attribute name="android:background"/>
+                    </optional>
+                    <optional>
+                        <attribute name="android:gravity">
+                            <data type="NCName"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="android:id"/>
+                    </optional>
+                    <attribute name="android:layout_height">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <optional>
+                        <attribute name="android:layout_marginStart">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="android:layout_weight">
+                            <data type="decimal"/>
+                        </attribute>
+                    </optional>
+                    <attribute name="android:layout_width">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                    <attribute name="android:text"/>
+                    <optional>
+                        <attribute name="android:textColor"/>
+                    </optional>
+                    <optional>
+                        <attribute name="android:textSize">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </optional>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+</grammar>
