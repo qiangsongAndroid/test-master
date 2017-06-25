@@ -123,11 +123,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.setModifyCountInterface(this);//设置增删接口
         listView.setGroupIndicator(null);
         listView.setAdapter(adapter);
-
         for (int i = 0; i < adapter.getGroupCount(); i++) {
             listView.expandGroup(i); //关键步骤4:初始化，将ExpandableListView以展开的方式显示
         }
-
 
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
@@ -185,12 +183,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+
     private void clearCart() {
         shoppingcatNum.setText("购物车(0)");
         actionBarEdit.setVisibility(View.GONE);
         llCart.setVisibility(View.GONE);
         empty_shopcart.setVisibility(View.VISIBLE);//这里发生过错误
     }
+
+
+
 
     /**
      * 模拟数据<br>
@@ -212,6 +214,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             childs.put(groups.get(i).getId(), goods);
         }
     }
+
+
 
     /**
      * 删除操作
@@ -240,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.notifyDataSetChanged();
 
     }
+
 
 
     private void findView(View view) {
@@ -289,6 +294,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.notifyDataSetChanged();
         calulate();
     }
+
+
+
 
     /**
      * @return 判断组元素是否全选
@@ -348,6 +356,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calulate();
     }
 
+
+
     /**
      * @param groupPosition
      * @param childPosition
@@ -382,9 +392,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         adapter.notifyDataSetChanged();
         calulate();
-
-
     }
+
+
 
     public void doUpdate(int groupPosition, int childPosition, View showCountView, boolean isChecked) {
         GoodsInfo good = (GoodsInfo) adapter.getChild(groupPosition, childPosition);
@@ -394,6 +404,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.notifyDataSetChanged();
         calulate();
     }
+
+
 
     @Override
     public void groupEditor(int groupPosition) {
@@ -505,6 +517,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calulate();
     }
 
+
+
+
     /**
      * 计算商品总价格，操作步骤
      * 1.先清空全局计价,计数
@@ -532,9 +547,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             shoppingcatNum.setText("购物车(" + mtotalCount + ")");
         }
-
-
     }
+
+
 
     private void setVisiable() {
         if (flag) {

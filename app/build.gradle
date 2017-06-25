@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -31,4 +31,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     //强大的下拉刷新控件
     compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.alibaba:fastjson:1.2.33'
 }
